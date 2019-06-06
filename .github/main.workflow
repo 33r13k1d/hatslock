@@ -1,6 +1,6 @@
 workflow "Main workflow" {
   resolves = ["release windows/amd64"]
-  on = "push"
+  on = "release"
 }
 
 action "release windows/amd64" {
