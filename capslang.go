@@ -5,7 +5,7 @@ import (
 	"syscall"
 	"unsafe"
 
-	"github.com/fffego/capslang/assets"
+	"github.com/FFFEGO/capslang/assets"
 	"github.com/getlantern/systray"
 )
 
