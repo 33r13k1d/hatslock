@@ -10,7 +10,7 @@ var (
 	procCallNextHookEx      = user32.NewProc("CallNextHookEx")
 	procUnhookWindowsHookEx = user32.NewProc("UnhookWindowsHookEx")
 	procGetMessage          = user32.NewProc("GetMessageW")
-	procPostMessage         = user32.NewProc("PostMessageA")
+	procPostMessage         = user32.NewProc("PostMessageW")
 	procGetForegroundWindow = user32.NewProc("GetForegroundWindow")
 )
 
