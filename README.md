@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/FFFEGO/hatslock/master/assets/icon.ico" width="24"/> hatslock
+# <img src="https://raw.githubusercontent.com/FFFEGO/hatslock/master/assets/icon.ico" width="24"/> hatslock [![Go Report Card](https://goreportcard.com/badge/github.com/FFFEGO/hatslock)](https://goreportcard.com/report/github.com/FFFEGO/hatslock)
 Windows tool that allows to use CAPS LOCK key to change input language.
 Tested on Windows 10.
 
