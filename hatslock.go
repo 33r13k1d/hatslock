@@ -28,7 +28,7 @@ func changeLanguage() {
 
 func callback(nCode int, wParam uintptr, kbdStruct *KBDLLHOOKSTRUCT) uintptr {
 	if nCode == HC_ACTION && wParam == WM_KEYDOWN {
-		if kbdStruct.VkCode == VK_CAPITAL {
+		if kbdStruct.vkCode == VK_CAPITAL {
 			changeLanguage()
 			return 1
 		}
