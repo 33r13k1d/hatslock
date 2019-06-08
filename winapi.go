@@ -30,3 +30,12 @@ type KBDLLHOOKSTRUCT struct {
 	Time        uint32
 	DwExtraInfo uintptr
 }
+
+type MSG struct {
+	Hwnd    uintptr
+	Message uint32
+	WParam  uintptr
+	LParam  uintptr
+	Time    uint32
+	Pt      uintptr
+}

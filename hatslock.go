@@ -26,16 +26,18 @@ func changeLanguage() {
 		ret, uintptr(WM_INPUTLANGCHANGEREQUEST), uintptr(2), uintptr(0))
 }
 
-func callback(nCode int, wParam uintptr, lParam uintptr) uintptr {
+func callback(nCode int, wParam uintptr, kbdStruct *KBDLLHOOKSTRUCT) uintptr {
 	if nCode == HC_ACTION && wParam == WM_KEYDOWN {
-		kbdstruct := (*KBDLLHOOKSTRUCT)(unsafe.Pointer(lParam))
-		if kbdstruct.VkCode == VK_CAPITAL {
+		if kbdStruct.VkCode == VK_CAPITAL {
 			changeLanguage()
 			return 1
 		}
 	}
 	ret, _, _ := procCallNextHookEx.Call(
-		uintptr(keyboardHook), uintptr(nCode), uintptr(wParam), uintptr(lParam))
+		keyboardHook,
+		uintptr(nCode),
+		uintptr(wParam),
+		uintptr(unsafe.Pointer(kbdStruct)))
 	return ret
 }
 
@@ -49,15 +51,15 @@ func setUpHook() {
 	keyboardHook = ret
 }
 
-func getMessage(msg uintptr) int {
+func getMessage(msg *MSG) int {
 	ret, _, _ := procGetMessage.Call(
 		uintptr(unsafe.Pointer(msg)), uintptr(0), uintptr(0), uintptr(0))
 	return int(ret)
 }
 
 func runLoop() {
-	var msg uintptr
-	for getMessage(msg) != 0 {
+	var msg MSG
+	for getMessage(&msg) != 0 {
 	}
 }
 
