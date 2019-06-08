@@ -4,7 +4,7 @@ import (
 	"syscall"
 	"unsafe"
 
-	"github.com/FFFEGO/capslang/assets"
+	"github.com/FFFEGO/hatslock/assets"
 	"github.com/getlantern/systray"
 )
 
@@ -12,8 +12,8 @@ var keyboardHook uintptr
 
 func setUpTray() {
 	systray.SetIcon(assets.IconData)
-	systray.SetTooltip("capslang")
-	mQuit := systray.AddMenuItem("Quit", "Quit the app")
+	systray.SetTooltip("hatslock")
+	mQuit := systray.AddMenuItem("Quit", "Quit hatslock")
 	go func() {
 		<-mQuit.ClickedCh
 		systray.Quit()

@@ -1,5 +1,5 @@
-# capslang
-Windows tool that allows to change input language with CAPS LOCK key.
+# hatslock
+Windows tool that allows to use CAPS LOCK key to change input language.
 Tested on Windows 10.
 
 ## Installation
