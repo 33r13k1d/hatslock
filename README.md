@@ -1,4 +1,4 @@
-# hatslock
+# <img src="https://raw.githubusercontent.com/FFFEGO/hatslock/master/assets/icon.ico" width="24"/> hatslock
 Windows tool that allows to use CAPS LOCK key to change input language.
 Tested on Windows 10.
 
